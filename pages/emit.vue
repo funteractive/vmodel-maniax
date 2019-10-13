@@ -1,11 +1,15 @@
 <template>
-  <div>emit</div>
+  <EmitParent />
 </template>
 
 <script lang="ts">
+import EmitParent from '~/components/molecules/EmitParent.vue'
+
 export default {
-  name: 'Emit'
+  components: {
+    EmitParent
+  }
 }
 </script>
 
-<style scoped></style>
+<style scoped lang="scss"></style>
