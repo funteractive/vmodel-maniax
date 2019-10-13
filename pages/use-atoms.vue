@@ -12,11 +12,7 @@
     </div>
     <div class="row">
       <h1 class="heading">select</h1>
-      <select v-model="selectValue">
-        <option>選択肢1</option>
-        <option>選択肢2</option>
-        <option>選択肢3</option>
-      </select>
+      <AtomSelect v-model="selectValue" :options="options" />
       <p>値：{{ selectValue }}</p>
     </div>
     <div class="row">
@@ -69,11 +65,13 @@
 <script lang="ts">
 import AtomInputText from '~/components/atoms/AtomInputText.vue'
 import AtomTextArea from '~/components/atoms/AtomTextArea.vue'
+import AtomSelect from '~/components/atoms/AtomSelect.vue'
 
 export default {
   components: {
     AtomInputText,
-    AtomTextArea
+    AtomTextArea,
+    AtomSelect
   },
   data() {
     return {
@@ -82,7 +80,8 @@ export default {
       selectValue: '',
       radioValue: [],
       singleCheckboxValue: false,
-      checkboxValue: []
+      checkboxValue: [],
+      options: ['選択肢1', '選択肢2', '選択肢3']
     }
   }
 }
