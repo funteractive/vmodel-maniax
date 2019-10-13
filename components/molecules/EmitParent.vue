@@ -12,7 +12,7 @@ export default Vue.extend({
     EmitChild
   },
   methods: {
-    eventNameHandler(val) {
+    eventNameHandler(val: string) {
       // eslint-disable-next-line
       console.log(val)
     }
