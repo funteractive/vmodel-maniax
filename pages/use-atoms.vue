@@ -17,18 +17,7 @@
     </div>
     <div class="row">
       <h1 class="heading">radio</h1>
-      <label>
-        <input v-model="radioValue" type="radio" value="選択肢1" />
-        選択肢1
-      </label>
-      <label>
-        <input v-model="radioValue" type="radio" value="選択肢2" />
-        選択肢2
-      </label>
-      <label>
-        <input v-model="radioValue" type="radio" value="選択肢3" />
-        選択肢3
-      </label>
+      <AtomRadios v-model="radioValue" :options="options" />
       <p>値：{{ radioValue }}</p>
     </div>
     <div class="row">
@@ -66,19 +55,21 @@
 import AtomInputText from '~/components/atoms/AtomInputText.vue'
 import AtomTextArea from '~/components/atoms/AtomTextArea.vue'
 import AtomSelect from '~/components/atoms/AtomSelect.vue'
+import AtomRadios from '~/components/atoms/AtomRadios.vue'
 
 export default {
   components: {
     AtomInputText,
     AtomTextArea,
-    AtomSelect
+    AtomSelect,
+    AtomRadios
   },
   data() {
     return {
       textValue: '',
       textAreaValue: '',
       selectValue: '',
-      radioValue: [],
+      radioValue: '',
       singleCheckboxValue: false,
       checkboxValue: [],
       options: ['選択肢1', '選択肢2', '選択肢3']
