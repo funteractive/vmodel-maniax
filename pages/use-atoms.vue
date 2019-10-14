@@ -27,18 +27,7 @@
     </div>
     <div class="row">
       <h1 class="heading">checkbox（複数）</h1>
-      <label>
-        <input v-model="checkboxValue" type="checkbox" value="選択肢1" />
-        選択肢1
-      </label>
-      <label>
-        <input v-model="checkboxValue" type="checkbox" value="選択肢2" />
-        選択肢2
-      </label>
-      <label>
-        <input v-model="checkboxValue" type="checkbox" value="選択肢3" />
-        選択肢3
-      </label>
+      <AtomCheckboxes v-model="checkboxValue" :options="options" />
       <p>値：{{ checkboxValue }}</p>
     </div>
   </div>
@@ -50,6 +39,7 @@ import AtomTextArea from '~/components/atoms/AtomTextArea.vue'
 import AtomSelect from '~/components/atoms/AtomSelect.vue'
 import AtomRadios from '~/components/atoms/AtomRadios.vue'
 import AtomCheckbox from '~/components/atoms/AtomCheckbox.vue'
+import AtomCheckboxes from '~/components/atoms/AtomCheckboxes.vue'
 
 export default {
   components: {
@@ -57,7 +47,8 @@ export default {
     AtomTextArea,
     AtomSelect,
     AtomRadios,
-    AtomCheckbox
+    AtomCheckbox,
+    AtomCheckboxes
   },
   data() {
     return {

@@ -14,7 +14,7 @@ export default Vue.extend({
   name: 'AtomCheckbox',
   props: {
     label: { type: String, default: '' },
-    value: { type: Boolean, default: false }
+    value: { type: Boolean, required: true }
   },
   methods: {
     inputHandler(e: any): void {
