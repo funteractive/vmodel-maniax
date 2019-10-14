@@ -2,7 +2,7 @@
   <div>
     <label v-for="option in options" :key="option">
       <input
-        v-model="copiedValue"
+        v-model="value"
         type="radio"
         :value="option"
         @input="inputHandler"
@@ -21,14 +21,8 @@ export default Vue.extend({
     options: { type: Array, required: true },
     value: { type: String, required: true }
   },
-  data() {
-    return {
-      copiedValue: this.value
-    }
-  },
   methods: {
     inputHandler(e: any): void {
-      this.copiedValue = e.target.value
       this.$emit('input', e.target.value)
     }
   }

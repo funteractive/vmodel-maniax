@@ -22,14 +22,7 @@
     </div>
     <div class="row">
       <h1 class="heading">checkbox（単数）</h1>
-      <label>
-        <input
-          v-model="singleCheckboxValue"
-          type="checkbox"
-          value="チェックする"
-        />
-        チェックする
-      </label>
+      <AtomCheckbox v-model="singleCheckboxValue" label="チェックする" />
       <p>値：{{ singleCheckboxValue }}</p>
     </div>
     <div class="row">
@@ -56,13 +49,15 @@ import AtomInputText from '~/components/atoms/AtomInputText.vue'
 import AtomTextArea from '~/components/atoms/AtomTextArea.vue'
 import AtomSelect from '~/components/atoms/AtomSelect.vue'
 import AtomRadios from '~/components/atoms/AtomRadios.vue'
+import AtomCheckbox from '~/components/atoms/AtomCheckbox.vue'
 
 export default {
   components: {
     AtomInputText,
     AtomTextArea,
     AtomSelect,
-    AtomRadios
+    AtomRadios,
+    AtomCheckbox
   },
   data() {
     return {
