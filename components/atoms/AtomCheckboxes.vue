@@ -23,8 +23,11 @@ export default Vue.extend({
     value: { type: Array, required: true }
   },
   data() {
+    const copiedValue: string[] = this.value.map((v) => {
+      return String(v)
+    })
     return {
-      copiedValue: this.value
+      copiedValue
     }
   },
   methods: {
@@ -38,10 +41,7 @@ export default Vue.extend({
       return copiedArr
     },
     inputHandler(e: any): void {
-      const cv = this.copiedValue.map((v) => {
-        return String(v)
-      })
-      this.$emit('input', this.toggleArray(cv, e.target.value))
+      this.$emit('input', this.toggleArray(this.copiedValue, e.target.value))
     }
   }
 })
