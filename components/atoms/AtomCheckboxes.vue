@@ -19,6 +19,7 @@ export default Vue.extend({
   name: 'AtomCheckboxes',
   props: {
     options: { type: Array, required: true },
+    // value: { type: Array, required: true } as PropOptions<string[]>
     value: { type: Array, required: true }
   },
   data() {
@@ -37,7 +38,10 @@ export default Vue.extend({
       return copiedArr
     },
     inputHandler(e: any): void {
-      this.$emit('input', this.toggleArray(this.copiedValue, e.target.value))
+      const cv = this.copiedValue.map((v) => {
+        return String(v)
+      })
+      this.$emit('input', this.toggleArray(cv, e.target.value))
     }
   }
 })
