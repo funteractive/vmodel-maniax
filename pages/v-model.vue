@@ -38,11 +38,7 @@
     <div class="row">
       <h1 class="heading">checkbox（単数）</h1>
       <label>
-        <input
-          v-model="singleCheckboxValue"
-          type="checkbox"
-          value="チェックする"
-        />
+        <input v-model="singleCheckboxValue" type="checkbox" />
         チェックする
       </label>
       <p>値：{{ singleCheckboxValue }}</p>
